@@ -3,19 +3,25 @@
 import mysql from "mysql";
 
 const dbConfig = {
-  host: "brmvwtscnjhv1u5txd7f-mysql.services.clever-cloud.com",
-  user: "uxbcauw5dimu5tfp",
-  password: "sDYjq4x94Sj0GgDzunSg",
-  database: "brmvwtscnjhv1u5txd7f",
+  host: "bm6rbuii3pvzukrbv2az-mysql.services.clever-cloud.com",
+  user: "u0a4peehlug7lif1",
+  password: "2cjaFqGaAUXrCmvpe41q",
+  database: "bm6rbuii3pvzukrbv2az",
   port: 3306,
 };
 
 const connection = mysql.createConnection(dbConfig);
 
 connection.connect((err) => {
-  if (err) {
-    console.error("Error al conectar a la base de datos:", err);
-    return;
-  }
+  if(err) throw err
   console.log("Conexión exitosa a la base de datos MySQL");
 });
+
+connection.query("SELECT * from Users", (err,rows) =>
+{
+  if(err) throw err
+  console.log("los datos de la tabla son estos:");
+  console.log(rows);
+})
+
+connection.end();

@@ -4,6 +4,7 @@
     "@clevercloud/client": "^8.2.0",
     "axios": "^1.6.8",
     "mysql": "^2.18.1",
+    "mysql2": "^3.9.7",
     "require": "^2.4.20"
   },
   "name": "ensayo",
